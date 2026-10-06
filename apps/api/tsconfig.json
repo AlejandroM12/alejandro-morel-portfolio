@@ -1,0 +1,15 @@
+{
+  "extends": "@personal-portfolio/config/typescript/base.json",
+  "compilerOptions": {
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "target": "ES2023",
+    "lib": ["ES2023"],
+    "outDir": "dist",
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "strictPropertyInitialization": false,
+    "noEmit": true
+  },
+  "include": ["src", "test", "prisma", "prisma.config.ts"]
+}
