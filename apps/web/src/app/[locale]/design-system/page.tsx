@@ -330,11 +330,11 @@ export default async function DesignSystemPage() {
                 label={t("navigation")}
                 items={[
                   { href: "/", label: nav("home") },
-                  { href: "#trabajo", label: t("work") },
-                  { href: "#perfil", label: t("about") },
-                  { href: "#experiencia", label: t("experience") },
-                  { href: "#conocimiento", label: t("skills") },
-                  { href: "#contacto", label: t("contact") },
+                  { href: "#experiencia", label: nav("experience") },
+                  { href: "#ingenieria", label: nav("engineering") },
+                  { href: "#experimentos", label: nav("experiments") },
+                  { href: "#conocimiento", label: nav("skills") },
+                  { href: "#contacto", label: nav("contact") },
                 ]}
               />
             </div>

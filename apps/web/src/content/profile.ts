@@ -16,12 +16,48 @@ export const profileLinks = {
   cvHref: "",
 };
 
-export const heroTechnologies: Localized[] = [
-  { es: "React", en: "React" },
-  { es: "Next.js", en: "Next.js" },
-  { es: "TypeScript", en: "TypeScript" },
-  { es: "NestJS", en: "NestJS" },
+const react = { es: "React", en: "React" } satisfies Localized;
+const nextjs = { es: "Next.js", en: "Next.js" } satisfies Localized;
+const typescript = { es: "TypeScript", en: "TypeScript" } satisfies Localized;
+const nestjs = { es: "NestJS", en: "NestJS" } satisfies Localized;
+const reactNative = {
+  es: "React Native",
+  en: "React Native",
+} satisfies Localized;
+
+export const heroStack = [
+  {
+    id: "core",
+    label: { es: "Núcleo", en: "Core" },
+    items: [react, nextjs, typescript, nestjs],
+  },
+  {
+    id: "current",
+    label: { es: "También trabajo con", en: "Currently working with" },
+    items: [reactNative],
+  },
+  {
+    id: "expanding",
+    label: { es: "En expansión", en: "Currently expanding" },
+    items: [{ es: "IA aplicada", en: "Applied AI" }],
+  },
+] as const;
+
+export const knowsAbout: Localized[] = [
+  react,
+  nextjs,
+  typescript,
+  nestjs,
+  reactNative,
+  { es: "Testing", en: "Testing" },
+  { es: "Arquitectura", en: "Architecture" },
+  { es: "Performance", en: "Performance" },
+  { es: "Observabilidad", en: "Observability" },
   { es: "IA aplicada", en: "Applied AI" },
+  { es: "LLMs", en: "LLMs" },
+  { es: "RAG", en: "RAG" },
+  { es: "Agentes de IA", en: "AI Agents" },
+  { es: "Automatización", en: "Automation" },
 ];
 
 export const experience = [
@@ -47,30 +83,39 @@ export const experience = [
 
 export const skillGroups = [
   {
-    id: "frontend",
-    label: { es: "Frontend", en: "Frontend" },
-    items: [
-      { es: "React", en: "React" },
-      { es: "Next.js", en: "Next.js" },
-      { es: "TypeScript", en: "TypeScript" },
-    ],
+    id: "web",
+    label: { es: "Web", en: "Web" },
+    items: [react, nextjs, typescript],
   },
   {
     id: "backend",
     label: { es: "Backend", en: "Backend" },
+    items: [nestjs, { es: "BFF", en: "BFF" }, { es: "APIs", en: "APIs" }],
+  },
+  {
+    id: "mobile",
+    label: { es: "Mobile", en: "Mobile" },
+    items: [reactNative],
+  },
+  {
+    id: "engineering",
+    label: { es: "Ingeniería", en: "Engineering" },
     items: [
-      { es: "NestJS", en: "NestJS" },
-      { es: "TypeScript", en: "TypeScript" },
+      { es: "Testing", en: "Testing" },
+      { es: "Arquitectura", en: "Architecture" },
+      { es: "Performance", en: "Performance" },
+      { es: "Observabilidad", en: "Observability" },
     ],
   },
   {
-    id: "ai",
-    label: { es: "IA y automatización", en: "AI & Automation" },
-    items: [{ es: "IA aplicada", en: "Applied AI" }],
-  },
-  {
-    id: "infrastructure",
-    label: { es: "Infraestructura", en: "Infrastructure" },
-    items: [] as Localized[],
+    id: "expanding",
+    label: { es: "En expansión", en: "Currently expanding" },
+    items: [
+      { es: "IA aplicada", en: "Applied AI" },
+      { es: "LLMs", en: "LLMs" },
+      { es: "RAG", en: "RAG" },
+      { es: "Agentes de IA", en: "AI Agents" },
+      { es: "Automatización", en: "Automation" },
+    ],
   },
 ] as const;

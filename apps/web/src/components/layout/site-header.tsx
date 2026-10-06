@@ -14,9 +14,9 @@ export async function SiteHeader() {
       </a>
       <Navigation
         items={[
-          { href: "/work", label: t("work") },
-          { href: "/#about", label: t("about") },
           { href: "/#experience", label: t("experience") },
+          { href: "/#engineering", label: t("engineering") },
+          { href: "/work", label: t("experiments") },
           { href: "/#skills", label: t("skills") },
           { href: "/#contact", label: t("contact") },
         ]}

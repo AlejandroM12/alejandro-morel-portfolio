@@ -7,7 +7,7 @@ import type { ReactNode } from "react";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
 import { ThemeProvider } from "@/components/theme-provider";
-import { heroTechnologies, profileLinks, text } from "@/content/profile";
+import { knowsAbout, profileLinks, text } from "@/content/profile";
 import { isLocale, routing } from "@/i18n/routing";
 import { cn } from "@/lib/cn";
 import "../globals.css";
@@ -80,7 +80,7 @@ export default async function LocaleLayout({
     name: "Alejandro Morel",
     jobTitle: home("jobTitle"),
     description: home("subtitle"),
-    knowsAbout: heroTechnologies.map((item) => text(item, locale)),
+    knowsAbout: knowsAbout.map((item) => text(item, locale)),
     ...(profileLinks.email ? { email: profileLinks.email } : {}),
     ...(profileLinks.linkedin ? { sameAs: [profileLinks.linkedin] } : {}),
   };

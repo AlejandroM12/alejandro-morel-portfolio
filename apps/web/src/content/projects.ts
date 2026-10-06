@@ -1,11 +1,10 @@
 import { text, type Localized } from "@/content/profile";
 
 export const projectCategories = [
-  "fullstack",
-  "ai",
+  "web",
   "backend",
-  "frontend",
-  "automation",
+  "mobile",
+  "applied-ai",
 ] as const;
 
 export type ProjectCategory = (typeof projectCategories)[number];
@@ -49,7 +48,7 @@ export const projects: readonly Project[] = [
     status: "concept",
     featured: true,
     order: 1,
-    categories: ["fullstack"],
+    categories: ["web"],
     technologies: [],
     languages: [],
     summary: {
@@ -75,7 +74,7 @@ export const projects: readonly Project[] = [
     status: "concept",
     featured: true,
     order: 2,
-    categories: ["ai"],
+    categories: ["applied-ai"],
     technologies: [],
     languages: [],
     summary: {
@@ -101,7 +100,7 @@ export const projects: readonly Project[] = [
     status: "concept",
     featured: true,
     order: 3,
-    categories: ["automation"],
+    categories: ["applied-ai"],
     technologies: [],
     languages: [],
     summary: {
