@@ -15,7 +15,7 @@ import {
 import { LocalizedDto } from "../../common/dto/localized.dto";
 
 export class CreateSkillGroupDto {
-  @ApiProperty({ example: "frontend" })
+  @ApiProperty({ example: "web" })
   @IsString()
   @MaxLength(80)
   @Matches(/^[a-z0-9]+(?:-[a-z0-9]+)*$/)

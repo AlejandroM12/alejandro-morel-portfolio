@@ -1,6 +1,6 @@
 import { Injectable } from "@nestjs/common";
 import { rethrowUnique } from "../common/prisma-errors";
-import { toDatabaseStatus } from "../common/project-status";
+import { toDatabaseCategory, toDatabaseStatus } from "../common/project-status";
 import { PrismaService } from "../prisma/prisma.service";
 import {
   projectListWhere,
@@ -60,7 +60,11 @@ export class ProjectsRepository {
         ...(input.order === undefined ? {} : { order: input.order }),
         ...(input.categories === undefined
           ? {}
-          : { categories: input.categories }),
+          : {
+              categories: input.categories.map((category) =>
+                toDatabaseCategory(category),
+              ),
+            }),
         ...(input.technologies === undefined
           ? {}
           : { technologies: input.technologies }),

@@ -20,7 +20,7 @@ const projects: Prisma.ProjectCreateInput[] = [
     status: "concept",
     featured: true,
     order: 1,
-    categories: ["fullstack"],
+    categories: ["web"],
     technologies: [],
     languages: [],
     summary: {
@@ -46,7 +46,7 @@ const projects: Prisma.ProjectCreateInput[] = [
     status: "concept",
     featured: true,
     order: 2,
-    categories: ["ai"],
+    categories: ["applied_ai"],
     technologies: [],
     languages: [],
     summary: {
@@ -72,7 +72,7 @@ const projects: Prisma.ProjectCreateInput[] = [
     status: "concept",
     featured: true,
     order: 3,
-    categories: ["automation"],
+    categories: ["applied_ai"],
     technologies: [],
     languages: [],
     summary: {
@@ -108,8 +108,8 @@ const experiences: Prisma.ExperienceCreateInput[] = [
 
 const skillGroups: Prisma.SkillGroupCreateInput[] = [
   {
-    slug: "frontend",
-    label: { es: "Frontend", en: "Frontend" },
+    slug: "web",
+    label: { es: "Web", en: "Web" },
     items: [
       { es: "React", en: "React" },
       { es: "Next.js", en: "Next.js" },
@@ -122,21 +122,39 @@ const skillGroups: Prisma.SkillGroupCreateInput[] = [
     label: { es: "Backend", en: "Backend" },
     items: [
       { es: "NestJS", en: "NestJS" },
-      { es: "TypeScript", en: "TypeScript" },
+      { es: "BFF", en: "BFF" },
+      { es: "APIs", en: "APIs" },
     ],
     order: 2,
   },
   {
-    slug: "ai",
-    label: { es: "IA y automatización", en: "AI & Automation" },
-    items: [{ es: "IA aplicada", en: "Applied AI" }],
+    slug: "mobile",
+    label: { es: "Mobile", en: "Mobile" },
+    items: [{ es: "React Native", en: "React Native" }],
     order: 3,
   },
   {
-    slug: "infrastructure",
-    label: { es: "Infraestructura", en: "Infrastructure" },
-    items: [],
+    slug: "engineering",
+    label: { es: "Ingeniería", en: "Engineering" },
+    items: [
+      { es: "Testing", en: "Testing" },
+      { es: "Arquitectura", en: "Architecture" },
+      { es: "Performance", en: "Performance" },
+      { es: "Observabilidad", en: "Observability" },
+    ],
     order: 4,
+  },
+  {
+    slug: "expanding",
+    label: { es: "En expansión", en: "Currently expanding" },
+    items: [
+      { es: "IA aplicada", en: "Applied AI" },
+      { es: "LLMs", en: "LLMs" },
+      { es: "RAG", en: "RAG" },
+      { es: "Agentes de IA", en: "AI Agents" },
+      { es: "Automatización", en: "Automation" },
+    ],
+    order: 5,
   },
 ];
 
@@ -148,15 +166,24 @@ async function main(): Promise<void> {
       slug: "alejandro-morel",
       name: "Alejandro Morel",
       jobTitle: {
-        es: "Desarrollador full stack senior",
-        en: "Senior Full Stack Developer",
+        es: "Ingeniero de software full stack",
+        en: "Full Stack Software Engineer",
       },
       technologies: [
         { es: "React", en: "React" },
         { es: "Next.js", en: "Next.js" },
         { es: "TypeScript", en: "TypeScript" },
         { es: "NestJS", en: "NestJS" },
+        { es: "React Native", en: "React Native" },
+        { es: "Testing", en: "Testing" },
+        { es: "Arquitectura", en: "Architecture" },
+        { es: "Performance", en: "Performance" },
+        { es: "Observabilidad", en: "Observability" },
         { es: "IA aplicada", en: "Applied AI" },
+        { es: "LLMs", en: "LLMs" },
+        { es: "RAG", en: "RAG" },
+        { es: "Agentes de IA", en: "AI Agents" },
+        { es: "Automatización", en: "Automation" },
       ],
     },
   });

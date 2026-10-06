@@ -13,11 +13,10 @@ enum ProjectStatus {
 }
 
 enum ProjectCategory {
-  fullstack
-  ai
+  web
   backend
-  frontend
-  automation
+  mobile
+  applied_ai
 }
 
 model Profile {

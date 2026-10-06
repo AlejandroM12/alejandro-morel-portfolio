@@ -91,7 +91,7 @@ describe("Projects API", () => {
     status: "concept",
     featured: true,
     order: 1,
-    categories: ["fullstack"],
+    categories: ["web"],
     summary: {
       es: "SaaS de gestión y analítica.",
       en: "A SaaS for management and analytics.",
@@ -147,7 +147,7 @@ describe("Projects API", () => {
     await request(server).post("/api/projects").set(key).send(body).expect(409);
 
     await request(server)
-      .get("/api/projects?category=fullstack&featured=true")
+      .get("/api/projects?category=web&featured=true")
       .expect(200)
       .expect((response) => {
         expect(response.body).toHaveLength(1);

@@ -9,7 +9,7 @@ const project: Project = {
   status: "concept",
   featured: true,
   order: 1,
-  categories: ["fullstack"],
+  categories: ["web"],
   technologies: [],
   languages: [],
   summary: { es: "SaaS", en: "SaaS" },

@@ -1,8 +1,10 @@
 import type { Localized, Screenshot } from "../common/localized";
 import {
+  fromDatabaseCategory,
   fromDatabaseStatus,
-  isProjectCategory,
+  toDatabaseCategory,
   toDatabaseStatus,
+  type DatabaseProjectCategory,
   type DatabaseProjectStatus,
   type ProjectCategory,
   type ProjectStatus,
@@ -63,11 +65,13 @@ export type ProjectRow = {
 };
 
 export function projectListWhere(query: ProjectListQuery): {
-  categories?: { has: ProjectCategory };
+  categories?: { has: DatabaseProjectCategory };
   featured?: boolean;
 } {
   return {
-    ...(query.category ? { categories: { has: query.category } } : {}),
+    ...(query.category
+      ? { categories: { has: toDatabaseCategory(query.category) } }
+      : {}),
     ...(query.featured === undefined ? {} : { featured: query.featured }),
   };
 }
@@ -80,10 +84,11 @@ export function toProject(row: ProjectRow): Project {
     featured: row.featured,
     order: row.order,
     categories: row.categories.map((category) => {
-      if (!isProjectCategory(category)) {
+      const mapped = fromDatabaseCategory(category);
+      if (!mapped) {
         throw new Error("Stored project category is invalid");
       }
-      return category;
+      return mapped;
     }),
     technologies: row.technologies,
     languages: row.languages,
@@ -107,7 +112,9 @@ export function toDatabaseProject(project: Project) {
     status: toDatabaseStatus(project.status),
     featured: project.featured,
     order: project.order,
-    categories: project.categories,
+    categories: project.categories.map((category) =>
+      toDatabaseCategory(category),
+    ),
     technologies: project.technologies,
     languages: project.languages,
     summary: project.summary,

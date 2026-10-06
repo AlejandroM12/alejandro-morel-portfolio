@@ -1,12 +1,41 @@
 export const projectCategories = [
-  "fullstack",
-  "ai",
+  "web",
   "backend",
-  "frontend",
-  "automation",
+  "mobile",
+  "applied-ai",
 ] as const;
 
 export type ProjectCategory = (typeof projectCategories)[number];
+
+const categoryToDatabase = {
+  web: "web",
+  backend: "backend",
+  mobile: "mobile",
+  "applied-ai": "applied_ai",
+} as const;
+
+const categoryFromDatabase = {
+  web: "web",
+  backend: "backend",
+  mobile: "mobile",
+  applied_ai: "applied-ai",
+} as const;
+
+export type DatabaseProjectCategory = keyof typeof categoryFromDatabase;
+
+export function toDatabaseCategory(
+  category: ProjectCategory,
+): DatabaseProjectCategory {
+  return categoryToDatabase[category];
+}
+
+export function fromDatabaseCategory(category: string): ProjectCategory | null {
+  if (!(category in categoryFromDatabase)) {
+    return null;
+  }
+
+  return categoryFromDatabase[category as DatabaseProjectCategory];
+}
 
 export const projectStatuses = ["concept", "in-progress", "shipped"] as const;
 

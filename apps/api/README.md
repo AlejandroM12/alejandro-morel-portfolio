@@ -48,7 +48,7 @@ Prefijo `/api`. Las mutaciones requieren `x-api-key`.
 | GET    | `/api/contact`          | Email, LinkedIn y CV                                  |
 | PATCH  | `/api/contact`          | Edita esos canales                                    |
 
-Categorías: `fullstack`, `ai`, `backend`, `frontend`, `automation`.
+Categorías públicas: `web`, `backend`, `mobile`, `applied-ai`. En la base, `applied-ai` se guarda como `applied_ai`. El orden de `technologies` en el perfil es la jerarquía: React, Next.js, TypeScript, NestJS, React Native, prácticas de ingeniería y, al final, IA aplicada.
 
 Estados: `concept`, `in-progress`, `shipped`.
 
