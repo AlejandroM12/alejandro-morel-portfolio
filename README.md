@@ -1,6 +1,6 @@
 # personal-portfolio
 
-Portfolio profesional de Alejandro Morel. Monorepo con pnpm y Turborepo. Esta etapa deja el esqueleto instalable y compilable. Las secciones del sitio, el contenido y la API llegan en etapas posteriores.
+Portfolio profesional de Alejandro Morel, Full Stack Software Engineer. Monorepo con pnpm y Turborepo. El sitio es bilingüe. La API NestJS administra el perfil y los proyectos. El sitio todavía lee el contenido estático.
 
 ## Requisitos
 
@@ -38,6 +38,7 @@ La app web queda en [http://localhost:3000](http://localhost:3000).
 ## Estructura
 
 ```text
-apps/web            Next.js, TypeScript y Tailwind CSS
+apps/web            Next.js, TypeScript y Tailwind CSS. Español e inglés.
+apps/api            NestJS, Prisma y PostgreSQL
 packages/config     TypeScript, ESLint y Prettier compartidos
 ```

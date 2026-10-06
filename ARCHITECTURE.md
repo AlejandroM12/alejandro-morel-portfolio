@@ -1,6 +1,6 @@
 # Arquitectura
 
-Etapa 1: esqueleto del monorepo. El sitio público vive en Next.js. NestJS, Prisma y PostgreSQL se agregan cuando el formulario de contacto necesite persistencia.
+El sitio público vive en Next.js y es bilingüe: español en `/` e inglés en `/en`. NestJS, Prisma y PostgreSQL están en `apps/api`. El sitio todavía no consume esa API.
 
 ## Workspace
 
@@ -15,7 +15,7 @@ personal-portfolio/
 ├── apps/
 │   └── web/                         # Next.js App Router
 │       └── src/app/
-│           ├── layout.tsx           # documento mínimo, lang="es"
+│           ├── layout.tsx           # esqueleto inicial; hoy el idioma vive en [locale]
 │           ├── page.tsx             # ruta raíz exigida por el framework
 │           └── globals.css          # Tailwind cargado, sin diseño
 ├── packages/
@@ -28,7 +28,7 @@ personal-portfolio/
 └── turbo.json
 ```
 
-`src/app/layout.tsx` y `src/app/page.tsx` existen porque el App Router no compila sin una ruta raíz. No son páginas de producto. La ruta raíz renderiza un `main` vacío.
+El árbol de arriba es el esqueleto inicial. Hoy las páginas viven en `apps/web/src/app/[locale]`, con home, catálogo y casos de estudio. El `lang` del documento es `es` o `en`, según la ruta.
 
 ## Límites
 

@@ -6,11 +6,11 @@ La home tiene una sola lectura, la de ese perfil.
 
 ## Idiomas
 
-El idioma por defecto es español. Inglés entra completo desde el shell visual, con `next-intl`. Esta etapa solo deja `lang="es"` en el documento raíz.
+El idioma por defecto es español, en `/`. Inglés está completo en `/en`, con `next-intl`. El atributo `lang` del documento sigue el idioma de la ruta.
 
 ## Tipografía
 
-Newsreader para títulos. Geist para interfaz y contenido. La carga de fuentes forma parte del shell visual, no de este esqueleto.
+Newsreader para títulos. Geist para interfaz y contenido. Geist Mono para metadatos.
 
 ## Contenido
 
@@ -18,4 +18,4 @@ La experiencia laboral, los proyectos y los resultados se cargan cuando existan 
 
 ## Fuera de esta versión
 
-Autenticación, panel de administración, blog, analytics y un segundo frontend. La API NestJS aparece en la etapa de contacto.
+Autenticación, panel de administración, blog, analytics, un segundo frontend y el formulario de contacto. La API NestJS ya existe. El sitio sigue leyendo el contenido estático.
