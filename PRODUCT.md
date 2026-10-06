@@ -1,23 +1,8 @@
 # Producto
 
-Portfolio profesional de Alejandro Morel, pensado como un solo producto de software. El sitio lo posiciona como Senior Full Stack Developer, con foco en React, Next.js, NestJS y Applied AI.
+Portfolio profesional de Alejandro Morel, pensado como un solo producto de software. El sitio lo posiciona como Full Stack Software Engineer en web, backend y mobile, con React, Next.js, TypeScript, NestJS y React Native. Applied AI es una capa que está incorporando, no un segundo oficio.
 
-La misma plataforma tiene que servir para distintas oportunidades, sin duplicar sitios ni páginas:
-
-- Senior Full Stack Developer
-- AI Full Stack Developer
-- Applied AI Engineer
-- Freelance Web Developer
-
-## Perfiles
-
-Hay una sola home canónica. Un query param cambia el énfasis de esa lectura. Los valores acordados son:
-
-- `?profile=fullstack`
-- `?profile=ai`
-- `?profile=freelance`
-
-Sin parámetro, la home muestra la presentación general. El selector y la reorganización del contenido se implementan en una etapa posterior. Esta etapa no incluye esa lógica.
+La home tiene una sola lectura, la de ese perfil.
 
 ## Idiomas
 

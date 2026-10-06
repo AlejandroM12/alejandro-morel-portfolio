@@ -40,7 +40,7 @@ personal-portfolio/
 
 `packages/contracts` no forma parte de esta etapa. Aparece cuando la web y la API compartan el payload de contacto.
 
-`packages/content` y la lente de perfiles aparecen con el modelo de contenido. El contrato previsto, todavía sin código, es una sola URL y el parámetro `profile` con los valores `fullstack`, `ai` y `freelance`.
+`packages/content` no forma parte de esta etapa. El posicionamiento vive en el contenido del sitio y en el seed de la API: una sola narrativa de full stack web, backend y mobile, con Applied AI en expansión. No hay un parámetro `profile` que cambie el oficio.
 
 ## Decisiones de toolchain
 
