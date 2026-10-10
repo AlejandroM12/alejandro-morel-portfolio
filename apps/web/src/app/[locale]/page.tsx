@@ -92,6 +92,9 @@ export default async function HomePage({ params }: HomePageProps) {
           contactBody: t("contactBody"),
           emailLabel: t("emailLabel"),
           linkedinLabel: t("linkedinLabel"),
+          githubLabel: t("githubLabel"),
+          educationEyebrow: t("educationEyebrow"),
+          educationTitle: t("educationTitle"),
         }}
       />
     </main>

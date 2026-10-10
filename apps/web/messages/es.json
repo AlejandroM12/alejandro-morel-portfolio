@@ -1,7 +1,7 @@
 {
   "Metadata": {
     "title": "Alejandro Morel",
-    "description": "Ingeniero de software full stack. Trabajo en web, backend y mobile con React, Next.js, NestJS y React Native, y estoy profundizando en IA aplicada."
+    "description": "Ingeniero de software y desarrollador full stack, con experiencia en React, Next.js, TypeScript, NestJS y React Native. Participo en decisiones técnicas y en el trabajo entre equipos. Estoy profundizando en IA aplicada."
   },
   "Nav": {
     "brand": "Alejandro Morel",
@@ -27,10 +27,10 @@
     "note": "Alejandro Morel"
   },
   "Home": {
-    "metaTitle": "Alejandro Morel — Ingeniero de software full stack",
-    "jobTitle": "Ingeniero de software full stack",
+    "metaTitle": "Alejandro Morel — Ingeniero de software / Desarrollador full stack",
+    "jobTitle": "Ingeniero de software / Desarrollador full stack",
     "title": "Web, backend y mobile.",
-    "subtitle": "Ingeniero de software full stack. Trabajo en web, backend y mobile con React, Next.js, NestJS y React Native, y estoy profundizando en IA aplicada.",
+    "subtitle": "Ingeniero de software y desarrollador full stack, con experiencia en React, Next.js, TypeScript, NestJS y React Native. Participo en decisiones técnicas y en el trabajo entre equipos. Estoy profundizando en IA aplicada.",
     "viewExperience": "Ver mi experiencia",
     "downloadCv": "Descargar CV",
     "contact": "Contactarme",
@@ -38,17 +38,20 @@
     "experienceEyebrow": "Experiencia",
     "experienceTitle": "Experiencia profesional",
     "engineeringEyebrow": "Ingeniería",
-    "engineeringBody": "Me hago cargo de las funcionalidades desde la interfaz web, pasando por la API, hasta React Native. Eso incluye diseño de BFF y APIs, debugging, y la arquitectura y los trade-offs de cada cambio.",
+    "engineeringBody": "Desarrollo funcionalidades de punta a punta, desde la interfaz web y React Native hasta el BFF y las APIs. Participo en decisiones técnicas, debugging y evaluación de alternativas y trade-offs, en colaboración con Producto, Diseño y otros desarrolladores.",
     "skillsEyebrow": "Conocimiento",
     "skillsTitle": "Web, backend y mobile",
     "expandingEyebrow": "En expansión",
     "expandingTitle": "IA aplicada",
     "expandingBody": "Una capa que estoy sumando al mismo trabajo: LLMs, RAG, agentes de IA y automatización dentro de productos y flujos.",
     "contactEyebrow": "Contacto",
-    "contactTitle": "Email y LinkedIn",
-    "contactBody": "Las dos vías para escribirme.",
+    "contactTitle": "Email, LinkedIn y GitHub",
+    "contactBody": "Por acá se puede escribir.",
     "emailLabel": "Email",
-    "linkedinLabel": "LinkedIn"
+    "linkedinLabel": "LinkedIn",
+    "githubLabel": "GitHub",
+    "educationEyebrow": "Estudios",
+    "educationTitle": "Formación"
   },
   "Work": {
     "eyebrow": "Experimentos",

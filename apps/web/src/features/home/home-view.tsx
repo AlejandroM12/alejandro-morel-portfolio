@@ -10,6 +10,7 @@ import {
   type ProjectStatus,
 } from "@/content/projects";
 import {
+  education,
   experience,
   heroStack,
   profileLinks,
@@ -56,6 +57,9 @@ type HomeViewProps = {
     contactBody: string;
     emailLabel: string;
     linkedinLabel: string;
+    githubLabel: string;
+    educationEyebrow: string;
+    educationTitle: string;
   };
 };
 
@@ -73,6 +77,13 @@ export function HomeView({ locale, copy }: HomeViewProps) {
           label: copy.linkedinLabel,
           value: "LinkedIn",
           href: profileLinks.linkedin,
+        }
+      : null,
+    profileLinks.github
+      ? {
+          label: copy.githubLabel,
+          value: "AlejandroM12",
+          href: profileLinks.github,
         }
       : null,
   ].filter((channel) => channel !== null);
@@ -151,31 +162,35 @@ export function HomeView({ locale, copy }: HomeViewProps) {
             eyebrow={copy.experienceEyebrow}
             title={copy.experienceTitle}
           />
-          <ol className="border-t border-border">
-            {experience.map((item, index) => {
-              const role = text(item.role, locale);
-              const detail = [role, item.period].filter(Boolean).join(" · ");
+          <FactList
+            items={experience.map((item) => ({
+              id: item.id,
+              title: item.organization,
+              detail: [text(item.role, locale), text(item.period, locale)]
+                .filter(Boolean)
+                .join(" · "),
+              summary: text(item.summary, locale),
+            }))}
+          />
+        </Container>
+      </Section>
 
-              return (
-                <li
-                  key={item.id}
-                  className="grid grid-cols-[2.5rem_1fr] items-baseline gap-x-4 border-b border-border py-8 sm:grid-cols-[3.5rem_1fr_auto] sm:gap-x-6"
-                >
-                  <span className="font-mono text-meta text-muted">
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
-                  <h3 className="font-serif text-heading">
-                    {item.organization}
-                  </h3>
-                  {detail ? (
-                    <p className="col-start-2 font-mono text-meta text-muted uppercase sm:col-start-3">
-                      {detail}
-                    </p>
-                  ) : null}
-                </li>
-              );
-            })}
-          </ol>
+      <Section id="education" className={sectionRule}>
+        <Container className="flex flex-col gap-10">
+          <SectionHeading
+            eyebrow={copy.educationEyebrow}
+            title={copy.educationTitle}
+          />
+          <FactList
+            items={education.map((item) => ({
+              id: item.id,
+              title: item.institution,
+              detail: [text(item.credential, locale), text(item.period, locale)]
+                .filter(Boolean)
+                .join(" · "),
+              summary: "",
+            }))}
+          />
         </Container>
       </Section>
 
@@ -318,6 +333,45 @@ export function HomeView({ locale, copy }: HomeViewProps) {
         </Container>
       </Section>
     </>
+  );
+}
+
+function FactList({
+  items,
+}: {
+  items: readonly {
+    id: string;
+    title: string;
+    detail: string;
+    summary: string;
+  }[];
+}) {
+  return (
+    <ol className="border-t border-border">
+      {items.map((item, index) => (
+        <li
+          key={item.id}
+          className="grid grid-cols-[2.5rem_minmax(0,1fr)] gap-x-4 border-b border-border py-8 sm:grid-cols-[3.5rem_minmax(0,1fr)] sm:gap-x-6"
+        >
+          <span className="pt-2 font-mono text-meta text-muted">
+            {String(index + 1).padStart(2, "0")}
+          </span>
+          <div className="min-w-0">
+            <h3 className="font-serif text-heading">{item.title}</h3>
+            {item.detail ? (
+              <p className="mt-3 font-mono text-meta text-muted uppercase">
+                {item.detail}
+              </p>
+            ) : null}
+            {item.summary ? (
+              <p className="mt-4 max-w-[var(--measure)] text-body text-muted">
+                {item.summary}
+              </p>
+            ) : null}
+          </div>
+        </li>
+      ))}
+    </ol>
   );
 }
 

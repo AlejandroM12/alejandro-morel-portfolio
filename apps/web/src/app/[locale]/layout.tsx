@@ -7,7 +7,7 @@ import type { ReactNode } from "react";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
 import { ThemeProvider } from "@/components/theme-provider";
-import { knowsAbout, profileLinks, text } from "@/content/profile";
+import { education, knowsAbout, profileLinks, text } from "@/content/profile";
 import { isLocale, routing } from "@/i18n/routing";
 import { cn } from "@/lib/cn";
 import "../globals.css";
@@ -81,8 +81,20 @@ export default async function LocaleLayout({
     jobTitle: home("jobTitle"),
     description: home("subtitle"),
     knowsAbout: knowsAbout.map((item) => text(item, locale)),
+    ...(education[0]
+      ? {
+          alumniOf: {
+            "@type": "EducationalOrganization",
+            name: education[0].institution,
+          },
+        }
+      : {}),
     ...(profileLinks.email ? { email: profileLinks.email } : {}),
-    ...(profileLinks.linkedin ? { sameAs: [profileLinks.linkedin] } : {}),
+    ...(profileLinks.linkedin || profileLinks.github
+      ? {
+          sameAs: [profileLinks.linkedin, profileLinks.github].filter(Boolean),
+        }
+      : {}),
   };
 
   return (

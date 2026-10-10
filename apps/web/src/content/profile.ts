@@ -11,9 +11,26 @@ export function text(value: Localized, locale: string): string {
 }
 
 export const profileLinks = {
-  email: "",
-  linkedin: "",
+  email: "alejandro.morel1905@gmail.com",
+  linkedin: "https://www.linkedin.com/in/morelalejandro/",
+  github: "https://github.com/AlejandroM12/alejandro-morel-portfolio",
   cvHref: "",
+};
+
+export const portfolioLenses = ["fullstack", "ai", "freelance"] as const;
+
+export type PortfolioLens = (typeof portfolioLenses)[number];
+
+export const lensEmphasis: Record<PortfolioLens, readonly string[]> = {
+  fullstack: ["experience", "engineering", "skills", "work", "expanding"],
+  ai: ["expanding", "work", "engineering", "experience", "skills"],
+  freelance: ["experience", "engineering", "skills", "work", "expanding"],
+};
+
+export const experienceOrder: Record<PortfolioLens, readonly string[]> = {
+  fullstack: ["itti", "banza", "freelance", "ache1", "orbit"],
+  ai: ["itti", "banza", "freelance", "ache1", "orbit"],
+  freelance: ["freelance", "itti", "banza", "ache1", "orbit"],
 };
 
 const react = { es: "React", en: "React" } satisfies Localized;
@@ -34,7 +51,12 @@ export const heroStack = [
   {
     id: "current",
     label: { es: "También trabajo con", en: "Currently working with" },
-    items: [reactNative],
+    items: [
+      reactNative,
+      { es: "BFF", en: "BFF" },
+      { es: "APIs", en: "APIs" },
+      { es: "Testing", en: "Testing" },
+    ],
   },
   {
     id: "expanding",
@@ -49,6 +71,8 @@ export const knowsAbout: Localized[] = [
   typescript,
   nestjs,
   reactNative,
+  { es: "BFF", en: "BFF" },
+  { es: "APIs", en: "APIs" },
   { es: "Testing", en: "Testing" },
   { es: "Arquitectura", en: "Architecture" },
   { es: "Performance", en: "Performance" },
@@ -60,24 +84,85 @@ export const knowsAbout: Localized[] = [
   { es: "Automatización", en: "Automation" },
 ];
 
+const empty = { es: "", en: "" } satisfies Localized;
+
 export const experience = [
   {
     id: "itti",
     organization: "itti",
-    role: { es: "", en: "" },
-    period: "",
+    role: {
+      es: "Ingeniero de software / Desarrollador full stack",
+      en: "Software Engineer / Full Stack Developer",
+    },
+    period: { es: "junio 2025 – actualidad", en: "June 2025 – Present" },
+    summary: {
+      es: "En itti desarrollo y mantengo funcionalidades web y mobile utilizando React, Next.js, TypeScript y React Native. También desarrollo el BFF con NestJS y TypeScript, integrando servicios y adaptando la información para las aplicaciones. Participo en refinamientos y decisiones técnicas, colaboro con Producto y Diseño, y contribuyo a iniciativas de frontend que involucran a distintos equipos.",
+      en: "At itti, I build and maintain web and mobile features using React, Next.js, TypeScript, and React Native. I also develop the BFF with NestJS and TypeScript, integrating services and adapting data for the applications. I take part in refinement and technical decisions, collaborate with Product and Design, and contribute to frontend initiatives involving multiple teams.",
+    },
   },
   {
     id: "banza",
-    organization: "Banza",
-    role: { es: "", en: "" },
-    period: "",
+    organization: "Adcap Grupo Financiero - Banza",
+    role: {
+      es: "Desarrollador frontend web y mobile",
+      en: "Frontend Web & Mobile Developer",
+    },
+    period: {
+      es: "septiembre 2023 – junio 2025",
+      en: "September 2023 – June 2025",
+    },
+    summary: {
+      es: "En un entorno fintech, desarrollé y mantuve funcionalidades en distintas aplicaciones web, incluyendo el backoffice de Producto, herramientas de Atención al Cliente, plataformas para partners y la billetera virtual. En mobile, trabajé con React Native en la aplicación existente de la billetera y en una nueva versión, desarrollando y manteniendo funcionalidades junto con otros desarrolladores.",
+      en: "In a fintech setting, I built and maintained features across several web applications, including the Product back office, Customer Support tools, partner platforms, and the virtual wallet. On mobile, I worked in React Native on the existing wallet app and on a new version, building and maintaining features alongside other developers.",
+    },
   },
   {
     id: "freelance",
     organization: "Freelance",
-    role: { es: "", en: "" },
-    period: "",
+    role: {
+      es: "Desarrollador web freelance",
+      en: "Freelance Web Developer",
+    },
+    period: { es: "enero 2023 – junio 2025", en: "January 2023 – June 2025" },
+    summary: empty,
+  },
+  {
+    id: "ache1",
+    organization: "Ache1 Design & Development",
+    role: {
+      es: "Desarrollador web frontend",
+      en: "Frontend Web Developer",
+    },
+    period: {
+      es: "abril 2022 – diciembre 2022",
+      en: "April 2022 – December 2022",
+    },
+    summary: empty,
+  },
+  {
+    id: "orbit",
+    organization: "Orbit",
+    role: { es: "Desarrollador frontend", en: "Frontend Developer" },
+    period: {
+      es: "marzo 2022 – diciembre 2022",
+      en: "March 2022 – December 2022",
+    },
+    summary: empty,
+  },
+] as const;
+
+export const education = [
+  {
+    id: "fermosa",
+    institution: "Instituto Superior Fermosa",
+    credential: {
+      es: "Técnico superior en desarrollo de software",
+      en: "Higher technician degree in software development",
+    },
+    period: {
+      es: "febrero 2019 – diciembre 2021",
+      en: "February 2019 – December 2021",
+    },
   },
 ] as const;
 
