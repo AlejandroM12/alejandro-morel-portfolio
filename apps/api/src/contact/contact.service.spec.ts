@@ -14,6 +14,7 @@ describe("ContactService", () => {
     await expect(service.get()).resolves.toEqual({
       email: "",
       linkedin: "",
+      github: "",
       cvUrl: "",
     });
   });

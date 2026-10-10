@@ -13,36 +13,30 @@ import {
 } from "class-validator";
 import { LocalizedDto } from "../../common/dto/localized.dto";
 
-export class CreateExperienceDto {
-  @ApiProperty({ example: "itti" })
+export class CreateEducationDto {
+  @ApiProperty({ example: "fermosa" })
   @IsString()
   @MaxLength(80)
   @Matches(/^[a-z0-9]+(?:-[a-z0-9]+)*$/)
   slug!: string;
 
-  @ApiProperty({ example: "itti" })
+  @ApiProperty({ example: "Instituto Superior Fermosa" })
   @IsString()
   @IsNotEmpty()
   @MaxLength(160)
-  organization!: string;
+  institution!: string;
 
   @ApiPropertyOptional({ type: LocalizedDto })
   @IsOptional()
   @ValidateNested()
   @Type(() => LocalizedDto)
-  role?: LocalizedDto;
+  credential?: LocalizedDto;
 
   @ApiPropertyOptional({ type: LocalizedDto })
   @IsOptional()
   @ValidateNested()
   @Type(() => LocalizedDto)
   period?: LocalizedDto;
-
-  @ApiPropertyOptional({ type: LocalizedDto })
-  @IsOptional()
-  @ValidateNested()
-  @Type(() => LocalizedDto)
-  summary?: LocalizedDto;
 
   @ApiProperty({ example: 1 })
   @IsInt()
@@ -51,31 +45,25 @@ export class CreateExperienceDto {
   order!: number;
 }
 
-export class UpdateExperienceDto {
+export class UpdateEducationDto {
   @ApiPropertyOptional()
   @IsOptional()
   @IsString()
   @IsNotEmpty()
   @MaxLength(160)
-  organization?: string;
+  institution?: string;
 
   @ApiPropertyOptional({ type: LocalizedDto })
   @IsOptional()
   @ValidateNested()
   @Type(() => LocalizedDto)
-  role?: LocalizedDto;
+  credential?: LocalizedDto;
 
   @ApiPropertyOptional({ type: LocalizedDto })
   @IsOptional()
   @ValidateNested()
   @Type(() => LocalizedDto)
   period?: LocalizedDto;
-
-  @ApiPropertyOptional({ type: LocalizedDto })
-  @IsOptional()
-  @ValidateNested()
-  @Type(() => LocalizedDto)
-  summary?: LocalizedDto;
 
   @ApiPropertyOptional()
   @IsOptional()

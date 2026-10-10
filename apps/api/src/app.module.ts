@@ -2,6 +2,7 @@ import { Module } from "@nestjs/common";
 import { ConfigModule } from "@nestjs/config";
 import { validateEnv } from "./config/env";
 import { ContactModule } from "./contact/contact.module";
+import { EducationModule } from "./education/education.module";
 import { ExperienceModule } from "./experience/experience.module";
 import { HealthModule } from "./health/health.module";
 import { PrismaModule } from "./prisma/prisma.module";
@@ -19,6 +20,7 @@ import { SkillsModule } from "./skills/skills.module";
     HealthModule,
     ProfilesModule,
     ExperienceModule,
+    EducationModule,
     SkillsModule,
     ProjectsModule,
     ContactModule,

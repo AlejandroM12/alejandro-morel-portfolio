@@ -5,6 +5,7 @@ import type { UpdateContactDto } from "./dto/contact.dto";
 export type ContactRecord = {
   email: string;
   linkedin: string;
+  github: string;
   cvUrl: string;
 };
 
@@ -26,6 +27,7 @@ export class ContactRepository {
     const next = {
       email: input.email ?? current?.email ?? "",
       linkedin: input.linkedin ?? current?.linkedin ?? "",
+      github: input.github ?? current?.github ?? "",
       cvUrl: input.cvUrl ?? current?.cvUrl ?? "",
     };
     const row = await this.prisma.contact.upsert({
@@ -40,11 +42,13 @@ export class ContactRepository {
 function toContact(row: {
   email: string;
   linkedin: string;
+  github: string;
   cvUrl: string;
 }): ContactRecord {
   return {
     email: row.email,
     linkedin: row.linkedin,
+    github: row.github,
     cvUrl: row.cvUrl,
   };
 }

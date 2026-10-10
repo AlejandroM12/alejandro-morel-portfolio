@@ -30,7 +30,8 @@ Prefijo `/api`. Las mutaciones requieren `x-api-key`.
 | GET    | `/api/profiles`         | Perfiles                                              |
 | GET    | `/api/profiles/:slug`   | Un perfil                                             |
 | PATCH  | `/api/profiles/:slug`   | Edita nombre, título o tecnologías                    |
-| GET    | `/api/experience`       | Experiencia, por orden                                |
+| GET    | `/api/experience`       | Experiencia, por orden. Incluye cargo, período y resumen |
+| GET    | `/api/education`        | Formación, por orden                                  |
 | GET    | `/api/experience/:slug` | Un puesto                                             |
 | POST   | `/api/experience`       | Crea un puesto                                        |
 | PATCH  | `/api/experience/:slug` | Edita un puesto                                       |
@@ -45,7 +46,7 @@ Prefijo `/api`. Las mutaciones requieren `x-api-key`.
 | POST   | `/api/projects`         | Crea un proyecto                                      |
 | PATCH  | `/api/projects/:slug`   | Edita un proyecto                                     |
 | DELETE | `/api/projects/:slug`   | Borra un proyecto                                     |
-| GET    | `/api/contact`          | Email, LinkedIn y CV                                  |
+| GET    | `/api/contact`          | Email, LinkedIn, GitHub y CV                          |
 | PATCH  | `/api/contact`          | Edita esos canales                                    |
 
 Categorías públicas: `web`, `backend`, `mobile`, `applied-ai`. En la base, `applied-ai` se guarda como `applied_ai`. El orden de `technologies` en el perfil es la jerarquía: React, Next.js, TypeScript, NestJS, React Native, prácticas de ingeniería y, al final, IA aplicada.

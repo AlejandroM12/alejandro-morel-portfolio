@@ -31,6 +31,14 @@ export class UpdateContactDto {
   @MaxLength(2000)
   @ValidateIf((_, value: unknown) => value !== "")
   @IsUrl({ protocols: ["http", "https"], require_protocol: true })
+  github?: string;
+
+  @ApiPropertyOptional({ example: "" })
+  @IsOptional()
+  @IsString()
+  @MaxLength(2000)
+  @ValidateIf((_, value: unknown) => value !== "")
+  @IsUrl({ protocols: ["http", "https"], require_protocol: true })
   cvUrl?: string;
 }
 
@@ -40,6 +48,9 @@ export class ContactResponseDto {
 
   @ApiPropertyOptional()
   linkedin!: string;
+
+  @ApiPropertyOptional()
+  github!: string;
 
   @ApiPropertyOptional()
   cvUrl!: string;

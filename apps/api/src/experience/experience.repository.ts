@@ -11,7 +11,8 @@ export type ExperienceRecord = {
   slug: string;
   organization: string;
   role: { es: string; en: string };
-  period: string;
+  period: { es: string; en: string };
+  summary: { es: string; en: string };
   order: number;
 };
 
@@ -38,7 +39,8 @@ export class ExperienceRepository {
           slug: input.slug,
           organization: input.organization,
           role: asJson(input.role ?? emptyLocalized),
-          period: input.period ?? "",
+          period: asJson(input.period ?? emptyLocalized),
+          summary: asJson(input.summary ?? emptyLocalized),
           order: input.order,
         },
       });
@@ -66,7 +68,10 @@ export class ExperienceRepository {
           ? {}
           : { organization: input.organization }),
         ...(input.role === undefined ? {} : { role: asJson(input.role) }),
-        ...(input.period === undefined ? {} : { period: input.period }),
+        ...(input.period === undefined ? {} : { period: asJson(input.period) }),
+        ...(input.summary === undefined
+          ? {}
+          : { summary: asJson(input.summary) }),
         ...(input.order === undefined ? {} : { order: input.order }),
       },
     });
@@ -89,14 +94,16 @@ function toExperience(row: {
   slug: string;
   organization: string;
   role: unknown;
-  period: string;
+  period: unknown;
+  summary: unknown;
   order: number;
 }): ExperienceRecord {
   return {
     slug: row.slug,
     organization: row.organization,
     role: readLocalized(row.role),
-    period: row.period,
+    period: readLocalized(row.period),
+    summary: readLocalized(row.summary),
     order: row.order,
   };
 }

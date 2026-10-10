@@ -5,6 +5,7 @@ import type { UpdateContactDto } from "./dto/contact.dto";
 const emptyContact: ContactRecord = {
   email: "",
   linkedin: "",
+  github: "",
   cvUrl: "",
 };
 
