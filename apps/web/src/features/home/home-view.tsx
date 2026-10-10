@@ -19,7 +19,6 @@ import {
   type Localized,
 } from "@/content/profile";
 import { ProjectImage } from "@/features/home/project-image";
-import { ProjectVisual } from "@/features/home/project-visual";
 import { cn } from "@/lib/cn";
 
 const sectionRule = "scroll-mt-56 border-t border-border md:scroll-mt-24";
@@ -225,8 +224,8 @@ export function HomeView({ locale, copy }: HomeViewProps) {
               {String(featured.length).padStart(2, "0")}
             </p>
           </div>
-          <div className="grid gap-8 lg:grid-cols-3">
-            {featured.map((project, index) => {
+          <div className="flex flex-col gap-8">
+            {featured.map((project) => {
               const category = project.categories[0];
               const cover = projectCover(project);
 
@@ -247,9 +246,7 @@ export function HomeView({ locale, copy }: HomeViewProps) {
                   media={
                     cover ? (
                       <ProjectImage src={cover} className="h-56" />
-                    ) : (
-                      <ProjectVisual name={project.name} index={index} />
-                    )
+                    ) : undefined
                   }
                 />
               );

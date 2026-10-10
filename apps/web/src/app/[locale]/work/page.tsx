@@ -14,7 +14,6 @@ import {
 } from "@/content/projects";
 import { text } from "@/content/profile";
 import { ProjectImage } from "@/features/home/project-image";
-import { ProjectVisual } from "@/features/home/project-visual";
 import { Link } from "@/i18n/navigation";
 import { isLocale } from "@/i18n/routing";
 
@@ -58,7 +57,12 @@ export default async function WorkPage({
   const category = isProjectCategory(requested) ? requested : "all";
   const visible = filterProjects(category);
   const ordered = listProjects();
-  const filters = ["all", ...projectCategories] as const;
+  const filters = [
+    "all",
+    ...projectCategories.filter((item) =>
+      ordered.some((project) => project.categories.includes(item)),
+    ),
+  ] as const;
 
   return (
     <main>
@@ -94,9 +98,6 @@ export default async function WorkPage({
               {visible.map((project) => {
                 const primary = project.categories[0];
                 const cover = projectCover(project);
-                const index = ordered.findIndex(
-                  (item) => item.slug === project.slug,
-                );
 
                 return (
                   <li key={project.slug} className="min-w-0">
@@ -115,12 +116,7 @@ export default async function WorkPage({
                       media={
                         cover ? (
                           <ProjectImage src={cover} className="h-56" />
-                        ) : (
-                          <ProjectVisual
-                            name={project.name}
-                            index={index < 0 ? 0 : index}
-                          />
-                        )
+                        ) : undefined
                       }
                     />
                   </li>

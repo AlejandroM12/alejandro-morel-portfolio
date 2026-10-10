@@ -16,7 +16,6 @@ import {
 } from "@/content/projects";
 import { text, type Localized } from "@/content/profile";
 import { ProjectImage } from "@/features/home/project-image";
-import { ProjectVisual } from "@/features/home/project-visual";
 import { Link } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
 
@@ -65,7 +64,6 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
     notFound();
   }
 
-  const index = listProjects().findIndex((item) => item.slug === project.slug);
   const cover = projectCover(project);
   const gallery = project.screenshots.slice(cover ? 1 : 0);
   const features = project.features.filter((item) => hasCopy(item, locale));
@@ -92,13 +90,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
               )}
               className="max-h-[36rem] border border-border"
             />
-          ) : (
-            <ProjectVisual
-              name={project.name}
-              index={index < 0 ? 0 : index}
-              className="min-h-80 border border-border"
-            />
-          )}
+          ) : null}
           <header className="flex max-w-[var(--measure)] flex-col gap-5">
             <div className="flex flex-wrap items-center gap-3">
               <Badge tone="accent">{work(statusKey(project.status))}</Badge>
