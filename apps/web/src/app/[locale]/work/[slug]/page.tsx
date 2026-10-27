@@ -88,7 +88,9 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                 project.screenshots[0]?.alt ?? { es: "", en: "" },
                 locale,
               )}
-              className="max-h-[36rem] border border-border"
+              width={project.screenshots[0]?.width}
+              height={project.screenshots[0]?.height}
+              className="h-auto w-full border border-border object-contain"
             />
           ) : null}
           <header className="flex max-w-[var(--measure)] flex-col gap-5">
@@ -117,7 +119,9 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                     <ProjectImage
                       src={shot.src}
                       alt={text(shot.alt, locale)}
-                      className="border border-border"
+                      width={shot.width}
+                      height={shot.height}
+                      className="h-auto w-full border border-border object-contain"
                     />
                   </li>
                 ))}

@@ -7,7 +7,7 @@
     "brand": "Alejandro Morel",
     "primary": "Secciones",
     "home": "Inicio",
-    "experiments": "Experimentos",
+    "experiments": "Proyectos",
     "experience": "Experiencia",
     "engineering": "Ingeniería",
     "skills": "Conocimiento",
@@ -54,9 +54,9 @@
     "educationTitle": "Formación"
   },
   "Work": {
-    "eyebrow": "Experimentos",
-    "title": "Conceptos seleccionados",
-    "description": "Conceptos personales. No son trabajos de clientes ni experiencia profesional. El caso de estudio aparece cuando la implementación es real.",
+    "eyebrow": "Proyectos",
+    "title": "Proyectos seleccionados",
+    "description": "SignalDesk está publicado, con demo y repositorio. Flowboard, DocuMind AI y Automate siguen como conceptos personales: no son trabajos de clientes ni experiencia profesional.",
     "filters": "Filtrar proyectos",
     "all": "Todos",
     "web": "Web",
@@ -71,7 +71,7 @@
     "statusShipped": "Publicado"
   },
   "Project": {
-    "back": "Volver a los conceptos",
+    "back": "Volver a proyectos",
     "overview": "Resumen",
     "problem": "Problema",
     "solution": "Solución",
