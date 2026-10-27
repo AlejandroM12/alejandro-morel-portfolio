@@ -245,7 +245,16 @@ export function HomeView({ locale, copy }: HomeViewProps) {
                   }
                   media={
                     cover ? (
-                      <ProjectImage src={cover} className="h-56" />
+                      <ProjectImage
+                        src={cover}
+                        alt={text(
+                          project.screenshots[0]?.alt ?? { es: "", en: "" },
+                          locale,
+                        )}
+                        width={project.screenshots[0]?.width}
+                        height={project.screenshots[0]?.height}
+                        className="h-56 object-top"
+                      />
                     ) : undefined
                   }
                 />
